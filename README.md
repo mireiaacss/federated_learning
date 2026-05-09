@@ -13,13 +13,14 @@ This project implements a privacy-preserving Machine Learning system to predict 
 
 ## Project Structure
 
-- `federated_learning.py`: Main training script including data processing, FedAvg implementation, and baseline comparison.
-- `dashboard.py`: Streamlit-based MLOps dashboard to visualize model performance and data analysis.
-- `eda_analysis.csv`: Statistical summaries of the dataset generated during training.
-- `round_log.csv`: Convergence metrics for each communication round used for tracking training progress.
-- `results_summary.csv`: Final comparative evaluation between the Federated and Centralized models.
-- `confusion_matrices.csv`: Stores counts of True Positives, True Negatives, False Positives, and False Negatives for both models
-- `bank_metrics.csv`: F1, AUC, Precision, and Recall for each individual bank, showing how the global model performs
+├── federated_learning.py   — Main training script (data processing, FedAvg, and baselines)
+├── dashboard.py            — Streamlit-based MLOps dashboard
+└── generated_data/         — Folder containing output telemetry
+    ├── eda_analysis.csv    — Statistical summaries of the dataset generated during training
+    ├── round_log.csv       — Convergence metrics for each training round
+    ├── results_summary.csv — Final comparative evaluation (Federated vs. Centralized)
+    ├── confusion_matrices.csv — Counts of True Positives, Negatives, and Errors for both models
+    └── bank_metrics.csv    — F1, AUC, Precision, and Recall scores for each individual bank node
 
 
 ## Setup and Usage
