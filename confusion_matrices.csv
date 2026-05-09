@@ -1,0 +1,3 @@
+label,tn,fp,fn,tp
+federated model,5792,636,270,538
+centralized baseline,5879,549,286,522
