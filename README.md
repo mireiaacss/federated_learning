@@ -12,7 +12,7 @@ This project implements a privacy-preserving Machine Learning system to predict 
 
 
 ## Project Structure
-
+```
 ├── federated_learning.py   — Main training script (data processing, FedAvg, and baselines)
 ├── dashboard.py            — Streamlit-based MLOps dashboard
 └── generated_data/         — Folder containing output telemetry
@@ -21,7 +21,7 @@ This project implements a privacy-preserving Machine Learning system to predict 
     ├── results_summary.csv — Final comparative evaluation (Federated vs. Centralized)
     ├── confusion_matrices.csv — Counts of True Positives, Negatives, and Errors for both models
     └── bank_metrics.csv    — F1, AUC, Precision, and Recall scores for each individual bank node
-
+```
 
 ## Setup and Usage
 
