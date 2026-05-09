@@ -11,6 +11,11 @@ from sklearn.metrics import (
 )
 import warnings
 warnings.filterwarnings("ignore")
+import os
+
+# crear carpeta generated_data si no existe para guardar los csv que el dashboard va a leer
+if not os.path.exists("generated_data"):
+    os.makedirs("generated_data")
 
 def load_data_and_generate_eda():
     # descargamos el dataset clásico de marketing bancario de uci
@@ -44,7 +49,7 @@ def load_data_and_generate_eda():
     })
     
     # guardamos el eda para que la pestaña 5 del dashboard lo pueda leer
-    eda_df.to_csv("eda_analysis.csv", index=False)
+    eda_df.to_csv("generated_data/eda_analysis.csv", index=False)
 
     return X_vals, y
 
@@ -354,22 +359,22 @@ def main():
     print_metrics(cen_res)
 
     # exportamos datos al dashboard
-    best_round_log.to_csv("round_log.csv", index=False)
+    best_round_log.to_csv("generated_data/round_log.csv", index=False)
 
     pd.DataFrame([
         {k: v for k, v in r.items() if k not in ("cm")}
         for r in [fed_res, cen_res]
-    ]).to_csv("results_summary.csv", index=False)
+    ]).to_csv("generated_data/results_summary.csv", index=False)
 
     get_per_bank_metrics(banks_balanced, best_fed_model, cen_model).to_csv(
-        "bank_metrics.csv", index=False
+        "generated_data/bank_metrics.csv", index=False
     )
 
     pd.DataFrame([
         {"label": r["label"], "tn": r["cm"][0,0], "fp": r["cm"][0,1],
          "fn": r["cm"][1,0],  "tp": r["cm"][1,1]}
         for r in [fed_res, cen_res]
-    ]).to_csv("confusion_matrices.csv", index=False)
+    ]).to_csv("generated_data/confusion_matrices.csv", index=False)
 
 
 if __name__ == "__main__":

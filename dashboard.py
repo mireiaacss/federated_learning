@@ -41,11 +41,11 @@ def load_csv(path):
     return pd.read_csv(path)
 
 # cargamos todos los archivos que escupió nuestro modelo
-round_log   = load_csv("round_log.csv")
-results_df  = load_csv("results_summary.csv")
-bank_df     = load_csv("bank_metrics.csv")
-cm_df       = load_csv("confusion_matrices.csv")
-eda_df      = load_csv("eda_analysis.csv")
+round_log   = load_csv("generated_data/round_log.csv")
+results_df  = load_csv("generated_data/results_summary.csv")
+bank_df     = load_csv("generated_data/bank_metrics.csv")
+cm_df       = load_csv("generated_data/confusion_matrices.csv")
+eda_df      = load_csv("generated_data/eda_analysis.csv")
 
 # comprobamos que están todos para no petar la app
 data_ready  = all(d is not None for d in [round_log, results_df, bank_df, cm_df, eda_df])
