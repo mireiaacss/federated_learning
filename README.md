@@ -48,7 +48,7 @@ ROC-AUC (~0.90): This is the primary indicator of the model's quality. It confir
 
 F1 Score: Used to select the Optimal Threshold (e.g., 0.65). By adjusting the threshold, we fine-tune the model to catch as many eligible customers as possible (Recall) while maintaining a reliable rate of true positives (Precision).
 
-## How it Works
+## How it Works
 1. Local Preprocessing: Each bank scales its data and applies SMOTE to balance its training set locally.
 
 2. Weight Aggregation: Banks perform local gradient descent and send only the resulting model parameters to a central server.
